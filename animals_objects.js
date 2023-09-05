@@ -2,13 +2,6 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
-const Animal = {
-  name: "default name",
-  desc: "",
-  type: "",
-  age: 0,
-};
-
 const allAnimals = [];
 
 function start() {
@@ -28,17 +21,17 @@ function loadJSON() {
 
 function prepareObjects(jsonData) {
   jsonData.forEach((jsonObject) => {
-    // TODO: Create new object with cleaned data - and store that in the allAnimals array
-    const animal = Object.create(Animal);
+    // Laver et nyt objekt
+    const animal = {};
 
-    // vi finder de korrekte indextal for positionen af firstSpace, secondSpace og lastSpace 
+    // vi finder de korrekte indextal for positionen af firstSpace, secondSpace og lastSpace,
+    // så vi kan indele orderne i stringen 
     const fullname = jsonObject.fullname;
     console.log(fullname);
 
     const firstSpace = fullname.indexOf(" ");
     const secondSpace = fullname.indexOf(" ", firstSpace + 1);
     const lastSpace = fullname.lastIndexOf(" ");
-
     console.log(firstSpace);
 
     // ud fra disse indextal kan vi nu isolere firstname desc og type fra hinanden
